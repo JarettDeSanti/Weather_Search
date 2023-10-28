@@ -1,13 +1,4 @@
-h1 {
-    padding-bottom: 1.5%;
-    padding-top: .50%;
-    color: rgb(255, 255, 255);
-    font-weight: 650;
-    padding-left: 50%;
-    background-image: linear-gradient(to right, rgb(121, 145, 226), rgb(84, 73, 189), rgb(68, 13, 129));
+.bg-navy-blue {
+    background-color: #004080;
 }
 
-.form-check-label {
-    font-size: 25px;
-    margin-bottom: 8px;
-}
