@@ -6,7 +6,7 @@ const apiKey = "94e6bf67634acaba77df3c9e64af09de";
 
 //variable that stores the OpenWeather Current Weather Data URL for city
 
-//const queryURL = "http://api.openweathermap.org/data/2.5/forecast?q=" + city + "&appid=" + apiKey;
+//const queryURL = "https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&appid=" + apiKey;
 
 //this is used to make server-side API calls
 //Fetch API is a web API built into the browser
@@ -21,7 +21,7 @@ const apiKey = "94e6bf67634acaba77df3c9e64af09de";
 // response data is typically in the form of JSON or XML document
 
 function getGeo(city) {
-    let geoUrl = `http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=5&appid=${apiKey}
+    let geoUrl = `https://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=5&appid=${apiKey}
   `
     fetch(geoUrl).then(response => response.json()).then(data => {
         console.log(data)
