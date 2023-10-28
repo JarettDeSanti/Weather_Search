@@ -10,7 +10,7 @@ const apiKey = "94e6bf67634acaba77df3c9e64af09de";
 
 //this is used to make server-side API calls
 //Fetch API is a web API built into the browser
-//fetch(queryURL)
+
 
 // TODO: adjust application to accept user input to store in city, state and country variables
 
