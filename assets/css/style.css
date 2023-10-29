@@ -2,3 +2,10 @@
     background-color: #004080;
 }
 
+.border {
+    display: none;
+}
+
+#forecast-container {
+    display: none;
+}
