@@ -2,10 +2,12 @@
     background-color: #004080;
 }
 
+/* sets the border to display: none */
 .border {
     display: none;
 }
 
+/* sets the forecast-container to display none */
 #forecast-container {
     display: none;
 }

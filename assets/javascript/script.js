@@ -16,6 +16,7 @@ $(document).ready(function () {
     showHistory();
 });
 
+// Function for the search history buttons added. The history items are appended to the div with an id of "history" in the HTML. When the search history buttons are clicked, then the "getGeo" function is activated for that city.
 function showHistory() {
     $('#clear-history').hide();
     $('#history').html('');
@@ -36,6 +37,7 @@ function showHistory() {
     }
 }
 
+// Function for clearing the history/removing the search history from the local storage. This removes the search history buttons from the webpage.
 function clearHistory() {
     localStorage.removeItem('history');
     history = [];
@@ -69,16 +71,18 @@ function getGeo(city) {
     });
 }
 
-
+// function gets current weather data for city and displays to page
 async function getWeather(name, lat, lon) {
     let weatherUrL = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=imperial&appid=${apiKey}`
     let response = await fetch(weatherUrL);
     let data = await response.json();
     //console.log(data);
+    // date, month, and year is accessed through moment.js
     const date = moment().format("M/D/YYYY");
     $(".border").css({ display: "block" });
     $("#forecast-container").css({ display: "block" });
     $("#title").text(name + " " + "(" + (`${date}`) + ")");
+    // appends the weather icon to #title
     $("#title").append(`<img src="https://openweathermap.org/img/w/${data.weather[0].icon}.png" />`);
     $("#temp").text(`Temp: ${data.main.temp}` + " \u00B0F");
     $("#wind").text(`Wind: ${data.wind.speed}` + " MPH");
@@ -129,32 +133,33 @@ async function getForecast(name, lat, lon) {
             id: 'forecast-data-' + i,
             class: 'text-white bg-navy-blue p-2 small',
         }).appendTo('#forecast-' + i);
-
+        
         $('<p>', {
             class: 'fw-bold mb-0',
             html: day.day
         }).appendTo('#forecast-data-' + i);
-
+         // appends weather icon 
         $('<p>', {
             class: 'p-0 m-0',
             html: '<img src="' + day.icon + '" />'
         }).appendTo('#forecast-data-' + i);
-
+        // appends the temperature and degrees fahrenheit
         $('<p>', {
             class: 'mt-0',
             html: 'Temp: ' + day.temp + ' &deg;F'
         }).appendTo('#forecast-data-' + i);
-
+        // appends the wind speed and "MPH"
         $('<p>', {
             html: 'Wind: ' + day.wind + ' MPH'
         }).appendTo('#forecast-data-' + i);
-
+        // appends the humidity and % symbol 
         $('<p>', {
             html: 'Humidity: ' + day.humidity + ' %'
         }).appendTo('#forecast-data-' + i);
     });
 }
 
+// Event listener for the #search-btn. "City Name Required" is displayed if the user does not enter any city in the search box. If the user does enter a city name, then the getGeo() function is started.
 $("#search-btn").on("click", function () {
     if ($('#city').val().trim() == '') {
         alert('City Name Required');
