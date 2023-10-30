@@ -34,8 +34,9 @@
 
                     <hr />
 
-                    <button class="btn btn-secondary w-100 mb-3" onclick="getGeo('Atlanta')">Atlanta</button>
-                    <button class="btn btn-secondary w-100 mb-3" onclick="getGeo('Denver')">Denver</button>
+                    <div id="history"></div>
+
+                    <button id="clear-history" class="btn text-decoration-underline" onclick="clearHistory()">Clear History</button>
                 </div>
 
                 <div class="col-md-8 col-lg-9" id="forecast-container">
@@ -46,52 +47,7 @@
                         <p id="humidity"></p>
                     </div>
                     <h3>5 Day Forecast:</h3>
-                    <div class="row p-0 m-0 pt-2 text-nowrap">
-                        <div class="col-lg p-0 pb-3">
-                            <div class="text-white bg-navy-blue p-2">
-                                <p class="fw-bold">10/27/2023</p>
-                                <p>sun</p>
-                                <p>Temp: 76.62 &deg;F</p>
-                                <p>Wind: 8.43 MPH</p>
-                                <p>Humidity: 44 %</p>
-                            </div>     
-                        </div>
-                        <div class="col-lg p-0 pb-3 ps-lg-3">
-                            <div class="text-white bg-navy-blue p-2">
-                                <p class="fw-bold">10/27/2023</p>
-                                <p>sun</p>
-                                <p>Temp: 76.62 &deg;F</p>
-                                <p>Wind: 8.43 MPH</p>
-                                <p>Humidity: 44 %</p>
-                            </div>
-                        </div>
-                        <div class="col-lg p-0 pb-3 ps-lg-3">
-                            <div class="text-white bg-navy-blue p-2">
-                                <p class="fw-bold">10/27/2023</p>
-                                <p>sun</p>
-                                <p>Temp: 76.62 &deg;F</p>
-                                <p>Wind: 8.43 MPH</p>
-                                <p>Humidity: 44 %</p>
-                            </div>
-                        </div>
-                        <div class="col-lg p-0 pb-3 ps-lg-3">
-                            <div class="text-white bg-navy-blue p-2">
-                                <p class="fw-bold">10/27/2023</p>
-                                <p>sun</p>
-                                <p>Temp: 76.62 &deg;F</p>
-                                <p>Wind: 8.43 MPH</p>
-                                <p>Humidity: 44 %</p>
-                            </div>
-                        </div>
-                        <div class="col-lg p-0 pb-3 ps-lg-3">
-                            <div class="text-white bg-navy-blue p-2">
-                                <p class="fw-bold">10/27/2023</p>
-                                <p>sun</p>
-                                <p>Temp: 76.62 &deg;F</p>
-                                <p>Wind: 8.43 MPH</p>
-                                <p>Humidity: 44 %</p>
-                            </div>
-                        </div>
+                    <div id="forecast" class="row p-0 m-0 pt-2 text-nowrap">
                     </div>
                 </div>
             </div>
